@@ -1,0 +1,17 @@
+<template>
+
+  <form submit.trigger="addCandidate()" class="ui form stacked segment">
+    <h3 class="ui dividing header"> Add a Candidate </h3>
+    <div class="field">
+      <label>First Name </label> <input value.bind="firstName">
+    </div>
+    <div class="field">
+      <label>Last Name </label> <input value.bind="lastName">
+    </div>
+    <div class="field">
+      <label>Office </label> <input value.bind="office">
+    </div>
+    <button class="ui blue submit button">Add</button>
+  </form>
+
+</template>

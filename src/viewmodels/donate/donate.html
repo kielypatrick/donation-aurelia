@@ -1,0 +1,39 @@
+<template>
+
+  <form submit.trigger="makeDonation()" class="ui form stacked segment">
+
+    <h3 class='ui dividing header'> Make a Donation </h3>
+    <div class="grouped inline fields">
+      <div class="field">
+        <label>Amount</label> <input type="number" value.bind="amount">
+      </div>
+    </div>
+
+    <h4 class="ui dividing header"> Select Method </h4>
+    <div class="grouped inline fields">
+
+      <div class="field" repeat.for="method of methods">
+        <div class="ui radio checkbox">
+          <input type="radio" model.bind="method" checked.bind="selectedMethod">
+          <label>${method}</label>
+        </div>
+      </div>
+      <label class="ui circular label"> ${selectedMethod} </label>
+    </div>
+
+    <h4 class="ui dividing header"> Select Candidate </h4>
+    <div class="grouped inline fields">
+      <div class="field" repeat.for="candidate of candidates">
+        <div class="ui radio checkbox">
+          <input type="radio" model.bind="candidate" checked.bind="selectedCandidate">
+          <label>${candidate.lastName}, ${candidate.firstName}</label>
+        </div>
+      </div>
+      <label class="ui circular label"> ${selectedCandidate.firstName} ${selectedCandidate.lastName}</label>
+    </div>
+
+    <button class="ui blue submit button">Donate</button>
+
+  </form>
+
+</template>
